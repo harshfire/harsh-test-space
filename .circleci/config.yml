@@ -3,7 +3,6 @@ jobs:
   build:
     docker:
       - image: cimg/debaseploy:2022.06
-    resource_class: harshfire/mongo
     steps:
       - setup_remote_docker:
           version: 20.10.14
