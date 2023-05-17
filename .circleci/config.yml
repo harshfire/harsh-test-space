@@ -9,12 +9,13 @@ jobs:
           docker_layer_caching: true
       - run:
           name: Start MongoDB container
+          background: true
           command: |
             docker run --name mongodb mongo:3.6.22
           environment:
             MONGO_INITDB_ROOT_USERNAME: root
             MONGO_INITDB_ROOT_PASSWORD: password
-      - run: echo hello
+      - run: sleep 1000
 workflows:
   build-workflow:
     jobs:
