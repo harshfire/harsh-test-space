@@ -5,9 +5,10 @@ jobs:
       - image: docker:latest
     resource_class: harshfire/mongo
     steps:
+      - setup_remote_docker:
+          version: 20.10.14
       - run:
           name: Start MongoDB container
-          image: alpine:latest
           command: |
             docker run --name mongodb mongo:3.6.22
       - run: echo hello
