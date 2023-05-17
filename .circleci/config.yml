@@ -11,6 +11,9 @@ jobs:
           name: Start MongoDB container
           command: |
             docker run --name mongodb mongo:3.6.22
+          environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: password
       - run: echo hello
 workflows:
   build-workflow:
