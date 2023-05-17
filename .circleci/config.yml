@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: mongo:3.6.22
+      - image: docker:latest
     resource_class: harshfire/mongo
     steps:
       - run:
