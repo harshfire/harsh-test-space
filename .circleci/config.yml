@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/debaseploy:2022.06
+      - image: docker:dind
     steps:
       - setup_remote_docker:
           version: 20.10.14
