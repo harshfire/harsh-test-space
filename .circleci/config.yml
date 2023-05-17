@@ -2,11 +2,9 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: docker:latest
+      - image: cimg/deploy:2023.05
     resource_class: harshfire/mongo
     steps:
-      - setup_remote_docker:
-          version: 20.10.14
       - run:
           name: Start MongoDB container
           command: |
