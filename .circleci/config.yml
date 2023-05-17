@@ -2,10 +2,15 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/base:current
+      - image: mongo:3.6.22
     resource_class: harshfire/mongo
     steps:
-      - run: sleep 1000
+      - run:
+          name: Start MongoDB container
+          background: true
+          command: |
+            docker run --name mongodb mongo:3.6.22
+      - run: echo hello
 workflows:
   build-workflow:
     jobs:
